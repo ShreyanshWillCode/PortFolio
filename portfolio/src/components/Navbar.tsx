@@ -29,13 +29,13 @@ const Navbar: React.FC = () => {
         </ul>
         
         {/* Desktop Social Media */}
-        <ul className="social-media">
+        {/* <ul className="social-media">
           <li><a href="#home"><FaFacebook /></a></li>
           <li><a href="#about"><FaTwitter /></a></li>
           <li><a href="#skills"><FaLinkedin /></a></li>
           <li><a href="#projects"><FaGithub /></a></li>
           <li><a href="#social-medias"><FaGithub /></a></li>
-        </ul>
+        </ul> */}
         
         {/* Mobile Menu Toggle */}
         <div className="hamburger" onClick={toggleMobileMenu}>
