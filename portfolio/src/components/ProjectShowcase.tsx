@@ -76,30 +76,30 @@ const ProjectShowcase: React.FC = () => {
 
               <CardContent>
                 <div className="p-4 flex flex-col">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-gray-600 mt-2">{project.description}</p>
-                <div className="mt-4 flex justify-between">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="outline">
-                      <Github className="mr-2 h-5 w-5" /> GitHub
-                    </Button>
-                  </a>
-                  {project.liveDemo && (
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <p className="text-gray-600 mt-2">{project.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2 justify-between sm:justify-center">
                     <a
-                      href={project.liveDemo}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button variant="default">
-                        <ExternalLink className="mr-2 h-5 w-5" /> Live Demo
+                      <Button variant="outline">
+                        <Github className="mr-2 h-5 w-5" /> GitHub
                       </Button>
                     </a>
-                  )}
-                </div>
+                    {project.liveDemo && (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="default">
+                          <ExternalLink className="mr-2 h-5 w-5" /> Live Demo
+                        </Button>
+                      </a>
+                    )}
+                  </div>
                 </div> 
               </CardContent>
             </Card>
