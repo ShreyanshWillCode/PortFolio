@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? "active" : ""}`}>
         <ul className="mobile-links">
-          <li>
+        <li>
             <a href="#home" onClick={closeMobileMenu}>
               Home
             </a>
@@ -116,14 +116,10 @@ const Navbar: React.FC = () => {
               Projects
             </a>
           </li>
+
           <li>
-            <a href="#experience" onClick={closeMobileMenu}>
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={closeMobileMenu}>
-              Contact
+            <a href="#social-media" onClick={closeMobileMenu}>
+              Social Media
             </a>
           </li>
         </ul>
