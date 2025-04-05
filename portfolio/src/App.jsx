@@ -53,7 +53,7 @@ const Portfolio = () => {
           {/* Image Section */}
           {/* <div className="flex-1 flex justify-center"> */}
           <img
-            src="../My_image.png"
+            src="/My_image.png"
             alt="Shreyansh"
             className="rounded-3xl shadow-lg border-4 m-5 border-white 
     w-34 xs:w-49 xs:h-50 sm:w-40 md:w-56 lg:w-64 xl:w-80 2xl:w-96 
