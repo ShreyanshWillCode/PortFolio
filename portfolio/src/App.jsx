@@ -130,7 +130,7 @@ const Portfolio = () => {
           <ProjectShowcase />
         </section>
 
-        <section id="social-media" className="py-5">
+        <section id="social-medias" className="py-5">
           <h2 className="text-center text-2xl font-bold mb-4">Social Media</h2>
           <SocialMedia />
         </section>
