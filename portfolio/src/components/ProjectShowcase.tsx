@@ -46,12 +46,12 @@ const projects: Project[] = [
     imageUrl: "/Weather.png",
   },
   {
-    title: "Tic-Tac-Toe",
+    title: "Mars-Rover-Navigation",
     description:
-      "A classic Tic-Tac-Toe game that can be played online.",
-    github: "https://github.com/Lightcoderhub/Tic-Tac-Toe",
-    liveDemo: "https://tick-tak-toe.vercel.app/",
-    imageUrl: "/Tic-Tac.png",
+      "A simulation of Mars rover navigation using path finding algorithms.",
+    github: "https://github.com/ShreyanshWillCode/Mars_Rover_Navigation_",
+    liveDemo: "https://mars-rover-navigationfrontend.vercel.app/",
+    imageUrl: "/Mars-Rover.png",
   }
 ];
 
