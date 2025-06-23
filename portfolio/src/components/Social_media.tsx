@@ -1,39 +1,58 @@
-import React from "react";
+import React from 'react';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import './Social_media.css';
 
-const SocialMedia = () => {
-return(
-    <section className="w-full flex items-center justify-center text-center  gap-5 mt-10"> 
-    
-    <a href="https://github.com/ShreyanshWillCode" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-          alt="GitHub"
-          className="w-9 h-9"
-        />
-      </a>
-      <a href="https://www.linkedin.com/in/shreyansh-mahato-7a706922b/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-          alt="LinkedIn"
-          className="w-9 h-9"
-        />
-      </a>
-      <a href="https://leetcode.com/u/MahatoJI/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-          alt="LeetCode"
-          className="w-9 h-9"
-        />
-      </a>
-      <a href="mailto:shreyanshmahato83683@gmail.com" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"
-          alt="Gmail"
-          className="w9 h-9"
-        />
-      </a>
-    </section>
-);
+const Social_media = () => {
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      icon: <FaGithub size={24} />,
+      url: 'https://github.com/yourusername',
+      color: '#333'
+    },
+    {
+      name: 'LinkedIn',
+      icon: <FaLinkedin size={24} />,
+      url: 'https://linkedin.com/in/yourusername',
+      color: '#0077B5'
+    },
+    {
+      name: 'Twitter',
+      icon: <FaTwitter size={24} />,
+      url: 'https://twitter.com/yourusername',
+      color: '#1DA1F2'
+    },
+    {
+      name: 'Email',
+      icon: <MdEmail size={24} />,
+      url: 'mailto:your.email@example.com',
+      color: '#D14836'
+    }
+  ];
+
+  return (
+    <div className="social-media-container">
+      <h2 className="text-2xl font-bold mb-6 text-white">Connect with Me</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {socialLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-card"
+            style={{ '--hover-color': link.color } as React.CSSProperties}
+          >
+            <div className="flex flex-col items-center justify-center p-4">
+              {link.icon}
+              <span className="mt-2 text-sm">{link.name}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default SocialMedia;
+export default Social_media;

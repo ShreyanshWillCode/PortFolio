@@ -1,0 +1,25 @@
+.social-media-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-card svg {
+  color: var(--hover-color, #fff);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover svg {
+  transform: scale(1.1);
+} 

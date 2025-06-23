@@ -77,3 +77,206 @@ section {
 .read-the-docs {
   color: #888;
 } */
+
+/* About Section Styles */
+#about {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#about h2, #about h3, #about h4 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#about p {
+  color: #ffffff !important;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  word-wrap: break-word; /* Ensure text wraps within the box */
+  overflow-wrap: break-word; /* Ensure text wraps within the box */
+  white-space: normal; /* Ensure text does not stay on a single line */
+}
+
+#about .text-foreground-secondary {
+  color: #cccccc !important;
+}
+
+#about .card-style {
+  background: rgba(0, 0, 0, 0.2); /* Very subtle transparent black background for cards */
+  border-radius: 8px;
+  padding: 1.5rem; /* Ensure consistent padding */
+  transition: all 0.3s ease;
+  color: #ffffff !important;
+  overflow: hidden;
+  box-sizing: border-box; /* Include padding in the element's total width */
+  border-left: 4px solid rgba(255, 170, 0, 0.2); /* Even softer accent border */
+}
+
+#about .card-style:hover {
+  background: rgba(0, 0, 0, 0.3); /* Slightly more visible on hover */
+  transform: translateY(-2px);
+}
+
+#about .border-accent {
+  border-color: rgba(255, 170, 0, 0.2) !important; /* Make sure this is applied and softer */
+}
+
+/* Override any conflicting Tailwind classes */
+#about .bg-background-darker {
+  background-color: transparent !important;
+}
+
+#about .text-foreground-primary {
+  color: #ffffff !important;
+}
+
+/* Parallax background for hero section */
+.parallax-bg {
+  background-image: url('/BoyCode.png');
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* For desktop */
+  will-change: background-position;
+  transition: background-position 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll; /* fallback for mobile */
+  }
+}
+
+/* About Me underline: left to right */
+.heading-underline-ltr {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline-ltr::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  border-radius: 2px;
+  transition: width 7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.heading-underline-ltr.active::after {
+  width: 100%;
+}
+
+/* Skills underline: center outward */
+.heading-underline-center {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline-center::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5eead4, #38bdf8, #818cf8);
+  border-radius: 2px;
+  transition: left 2.2s cubic-bezier(0.4,0,0.2,1), width 2.2s cubic-bezier(0.4,0,0.2,1);
+  transform: translateX(-50%);
+}
+.heading-underline-center.active::after {
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+/* Projects underline: right to left */
+.heading-underline-rtl {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline-rtl::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #818cf8, #38bdf8);
+  border-radius: 2px;
+  transition: width 2.2s cubic-bezier(0.4,0,0.2,1);
+}
+.heading-underline-rtl.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Contact underline: fade in and slide up */
+.heading-underline-fadeup {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline-fadeup::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #5eead4);
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  transition: opacity 2.2s cubic-bezier(0.4,0,0.2,1), transform 2.2s cubic-bezier(0.4,0,0.2,1);
+}
+.heading-underline-fadeup.active::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Preloader custom animations */
+@layer utilities {
+  .animate-bounce-slow {
+    animation: bounce 1.6s infinite cubic-bezier(0.6,0,0.4,1);
+  }
+  .animate-bar-wave {
+    animation: barWave 1.1s infinite cubic-bezier(0.4,0,0.2,1);
+  }
+  .animate-pulse-glow {
+    animation: pulseGlow 1.2s infinite ease-in-out;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    20% { transform: translateY(-18px); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-14px); }
+    80% { transform: translateY(-4px); }
+  }
+  @keyframes barWave {
+    0%,100%{transform:scaleY(1);}
+    20%{transform:scaleY(1.5);}
+    40%{transform:scaleY(0.7);}
+    60%{transform:scaleY(1.2);}
+    80%{transform:scaleY(0.9);}
+  }
+  @keyframes pulseGlow {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.6;
+      box-shadow: 0 0 5px rgba(45, 212, 191, 0.5);
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+      box-shadow: 0 0 15px rgba(45, 212, 191, 0.8), 0 0 25px rgba(45, 212, 191, 0.4);
+    }
+  }
+}

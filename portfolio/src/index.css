@@ -1,4 +1,147 @@
+@import 'tailwindcss';
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
-@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Color Palette for Dark, Golden Theme */
+    --primary-50: 40 100% 98%;   /* Very light gold */
+    --primary-100: 40 100% 95%;  /* Lighter gold */
+    --primary-200: 40 100% 90%;  /* Light gold */
+    --primary-300: 40 100% 80%;  /* Medium gold */
+    --primary-400: 40 100% 70%;  /* Stronger gold */
+    --primary-500: 40 100% 60%;  /* Base gold */
+    --primary-600: 40 100% 50%;  /* Deep gold */
+    --primary-700: 40 100% 40%;  /* Darker gold */
+    --primary-800: 40 100% 30%;  /* Very dark gold */
+    --primary-900: 40 100% 20%;  /* Almost black gold */
+    --primary-950: 40 100% 10%;  /* Deepest gold */
+
+    --accent: 40 100% 60%; /* Warm golden accent, matching image highlights */
+
+    /* Backgrounds: Deep, dark tones to match image */
+    --background-darkest: 0 0% 5%;   /* Near black for deepest shadows */
+    --background-darker: 0 0% 8%;    /* Slightly lighter for main dark areas */
+    --background-default: 0 0% 10%;  /* Base background */
+    --background-lighter: 0 0% 15%;  /* For subtle gradient variations */
+    --background-lightest: 0 0% 20%; /* For very subtle elevated areas */
+    --background-hue: 0; /* Base hue for dynamic background gradient */
+
+    /* Foregrounds (Text Colors): High contrast for readability */
+    --foreground-primary: 0 0% 90%;   /* Light grey for main text */
+    --foreground-secondary: 0 0% 70%; /* Medium grey for secondary text */
+    --foreground-tertiary: 0 0% 50%;  /* Darker grey for tertiary info */
+    --foreground-inverted: 0 0% 10%;  /* Dark text on light backgrounds (if any) */
+
+    /* Borders and Dividers: Subtle presence */
+    --border-default: 0 0% 20%; /* Dark grey border */
+    --border-dark: 0 0% 15%;    /* Even darker border */
+    --border-light: 0 0% 25%;   /* Slightly lighter border */
+
+    /* Card Specific: Defined with transparency */
+    --card-background: 0 0% 12%; /* Slightly lighter than background for cards */
+    --card-border: 40 100% 30% / 0.3; /* Subtle golden tint for card borders */
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border-default))];
+  }
+  body {
+    background: linear-gradient(to bottom, hsl(var(--background-hue), 0%, 5%), hsl(var(--background-hue), 0%, 8%));
+    background-attachment: fixed;
+    color: hsl(var(--foreground-primary));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISGaCBYRAAAAGnRSTlP//////////////////////////dA3jaAAAADlSURBVDjL7ZXRCQAwCMN5R4/+/83Lg0gB+R8f+L5y45M0d+w7F7D0g18g8o8G7X8A6c0d/gPgnrY9s0jAAAAAElFTkSuQmCC'); /* Subtle noise */
+    opacity: 0.03; /* Reduced opacity for a very subtle grain */
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Specific styles for sections that should be darker */
+  #home, #about, #skills, #projects, #social-medias {
+    background-color: transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--accent));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent content shift when scrollbar appears */
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Apply colors to text elements directly if not handled by Tailwind classes */
+h1, h2, h3, h4, h5, h6 {
+  color: hsl(var(--foreground-primary));
+}
+
+p, li, a {
+  color: hsl(var(--foreground-secondary));
+}
+
+/* Accent for links and buttons (example, adjust as needed for specific components) */
+a.text-primary-600, .text-primary-400 {
+  color: hsl(var(--accent));
+}
+
+/* Styles for buttons/cards based on semi-transparent dark fill */
+.card-style {
+  background-color: hsla(var(--card-background), 0.9);
+  border: 1px solid hsla(var(--card-border));
+  box-shadow: 0 0 10px hsla(var(--accent), 0.2); /* Subtle golden glow */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-style:hover {
+  background-color: hsla(var(--card-background), 0.95);
+  box-shadow: 0 0 18px hsla(var(--accent), 0.4); /* Enhanced golden glow on hover */
+}
+
+/* Soft vignette or edge darkening to focus attention on content */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 150px rgba(0, 0, 0, 0.9); /* Stronger vignette */
+  pointer-events: none;
+  z-index: 9999;
+}
