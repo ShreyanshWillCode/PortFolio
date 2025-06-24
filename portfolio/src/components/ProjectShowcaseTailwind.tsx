@@ -259,7 +259,7 @@ const ProjectShowcaseTailwind: React.FC = () => {
               // Calculate smooth scale based on distance from center
               let scale = 1;
               if (cardWidth > 0 && containerWidth > 0 && scrollContainerRef.current) {
-                const container = scrollContainerRef.current;
+              const container = scrollContainerRef.current;
                 const scrollLeft = container.scrollLeft;
                 const center = scrollLeft + container.offsetWidth / 2;
                 const cardCenter = (index * cardWidth) + cardWidth / 2;
@@ -286,27 +286,27 @@ const ProjectShowcaseTailwind: React.FC = () => {
                 }
               };
               return (
-                <motion.div
-                  key={project.title}
-                  ref={index === 0 ? firstCardRef : null}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    rotate: 0,
-                    scale,
-                    x: cardWidth > 0 ? (index - currentIndex) * (-cardWidth * 0.15) : 0,
+              <motion.div
+                key={project.title}
+                ref={index === 0 ? firstCardRef : null}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  rotate: 0,
+                    scale: !isMobile ? scale : 1,
+                    x: !isMobile && cardWidth > 0 ? (index - currentIndex) * (-cardWidth * 0.15) : 0,
                     zIndex: Math.round(scale * 100),
-                  }}
-                  transition={{ 
-                    duration: 0.4,
-                    ease: [0.32, 0.72, 0, 1],
-                    scale: { duration: 0.3 }
-                  }}
-                  className="flex-none w-[32%] snap-center snap-always project-card-item relative h-[320px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px] first:ml-0"
-                  style={{
-                    scrollSnapAlign: 'center',
-                    scrollSnapStop: 'always',
+                }}
+                transition={{ 
+                  duration: 0.4,
+                  ease: [0.32, 0.72, 0, 1],
+                  scale: { duration: 0.3 }
+                }}
+                  className="flex-none w-[200px] sm:w-[60%] md:w-[45%] lg:w-[35%] xl:w-[32%] snap-center snap-always project-card-item relative h-[300px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px] first:ml-0"
+                style={{
+                  scrollSnapAlign: 'center',
+                  scrollSnapStop: 'always',
                     marginLeft: index === 0 ? '0' : '1rem',
                   }}
                   onTouchStart={handleTouchStart}
@@ -317,7 +317,7 @@ const ProjectShowcaseTailwind: React.FC = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover scale-110 z-0 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover sm:scale-110 z-0 transition-transform duration-500"
                       loading="lazy"
                     />
                     {/* Overlay: visible on hover/focus (desktop) or tap (mobile) */}
@@ -356,7 +356,7 @@ const ProjectShowcaseTailwind: React.FC = () => {
                             {tech}
                           </span>
                         ))}
-                      </div>
+                  </div>
                       <a
                         href={project.live}
                         target="_blank"
@@ -374,39 +374,39 @@ const ProjectShowcaseTailwind: React.FC = () => {
                       <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-2 sm:mb-3">{project.title}</h3>
                       <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3 line-clamp-2 flex-grow">{project.description}</p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2 sm:mb-3">
-                        {project.technologies.map((tech) => (
-                          <span
-                            key={tech}
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
                             className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs bg-gray-700/50 text-gray-300 rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <a
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a
                         href={project.repo}
-                        className="inline-flex items-center text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors duration-300 mt-auto"
+                      className="inline-flex items-center text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors duration-300 mt-auto"
                         target="_blank"
                         rel="noopener noreferrer"
+                    >
+                      View Project
+                      <svg
+                        className="w-3 h-3 ml-1.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        View Project
-                        <svg
-                          className="w-3 h-3 ml-1.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </a>
-                    </div>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </a>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
               );
             })}
           </div>
@@ -439,4 +439,4 @@ const ProjectShowcaseTailwind: React.FC = () => {
   );
 };
 
-export default ProjectShowcaseTailwind;
+export default ProjectShowcaseTailwind; 

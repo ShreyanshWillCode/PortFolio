@@ -119,7 +119,7 @@ const Skills = () => {
                   scale: 1.07,
                   boxShadow: "0 0 48px 8px #38bdf8, 0 2px 16px 0 rgba(0,0,0,0.35)",
                 }}
-                onMouseMove={handleCardHover}
+                onMouseMove={handleCardHover} 
                 onMouseLeave={handleCardLeave}
               >
                 <div className="flex flex-col items-center justify-center">
@@ -129,8 +129,8 @@ const Skills = () => {
               </motion.div>
             ))
           )}
-        </div>
-      </div>
+          </div>
+    </div>
     </section>
   );
 };
