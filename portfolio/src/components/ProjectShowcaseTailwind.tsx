@@ -232,7 +232,7 @@ const ProjectShowcaseTailwind: React.FC = () => {
       </div>
 
       {/* Outer Container with rounded corners and shadow */}
-      <div className="relative mb-8 mx-auto max-w-7xl px-4 md:px-0 flex-grow flex items-center h-[80vh]">
+      <div className="relative mb-8 mx-auto max-w-7xl px-4 md:px-0 flex-grow flex items-center h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh]">
         <div className="relative py-8 flex justify-center w-full h-full">
           {/* Projects Container */}
           <div
@@ -303,7 +303,7 @@ const ProjectShowcaseTailwind: React.FC = () => {
                     ease: [0.32, 0.72, 0, 1],
                     scale: { duration: 0.3 }
                   }}
-                  className="flex-none w-[98%] sm:w-[80%] md:w-[60%] lg:w-[42%] xl:w-[32%] snap-center snap-always project-card-item relative h-[320px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px] first:ml-0"
+                  className="flex-none w-[32%] snap-center snap-always project-card-item relative h-[320px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px] first:ml-0"
                   style={{
                     scrollSnapAlign: 'center',
                     scrollSnapStop: 'always',

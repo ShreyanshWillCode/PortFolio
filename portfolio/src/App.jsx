@@ -114,6 +114,17 @@ const Portfolio = () => {
                     }}
                   />
                 </div>
+                {/* Resume Button */}
+                <div className="mt-8">
+                  <a
+                    href="https://drive.google.com/file/d/1rgaQ-wedNlygzG_Ol6Pt454Xuc9IW82f/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-sm sm:text-base md:text-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-xl border border-blue-400/30 backdrop-blur-sm"
+                  >
+                    View My Resume
+                  </a>
+                </div>
               </div>
             ) : (
               <>
@@ -123,6 +134,17 @@ const Portfolio = () => {
                 <p className="text-3xl md:text-5xl font-semibold text-white">
                   Full Stack Developer
                 </p>
+                {/* Resume Button for reduced motion */}
+                <div className="mt-8">
+                  <a
+                    href="https://drive.google.com/file/d/1rgaQ-wedNlygzG_Ol6Pt454Xuc9IW82f/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-sm sm:text-base md:text-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-cyan-600 transition-colors duration-300 border border-blue-400/30 backdrop-blur-sm"
+                  >
+                    View My Resume
+                  </a>
+                </div>
               </>
             )}
           </div>
