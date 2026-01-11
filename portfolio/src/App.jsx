@@ -10,7 +10,7 @@ import "./index.css";
 
 import Navbar from "./components/Navbar.tsx";
 import Skills from "./components/Skills.tsx";
-import ProjectShowcaseTailwind from "./components/ProjectShowcaseTailwind.tsx";
+import ProjectShowcaseRedesigned from "./components/ProjectShowcaseRedesigned.tsx";
 import SocialMedia from "./components/Social_media.tsx";
 import Preloader from "./components/Preloader";
 // import Car3DHero from "./components/Car3DHero";
@@ -250,6 +250,7 @@ const Portfolio = () => {
           id="projects"
           ref={projectsRef}
           className="opacity-0 translate-y-10 transition-all duration-1000 ease-in-out"
+          style={{ overflowX: 'visible', overflowY: 'visible', position: 'relative' }}
         >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -257,8 +258,8 @@ const Portfolio = () => {
                 Projects
               </h2>
             </div>
-            <ProjectShowcaseTailwind />
           </div>
+          <ProjectShowcaseRedesigned />
         </section>
 
         {/* Contact Section */}

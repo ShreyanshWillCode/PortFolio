@@ -48,7 +48,14 @@ export default {
           lightest: 'hsl(var(--background-lightest) / <alpha-value>)',
         },
 
-        // Foregrounds (Text Colors)
+        // Foregrounds (Text Colors) - Custom for backwards compatibility
+        'foreground-custom': {
+          primary:   'hsl(var(--foreground-primary) / <alpha-value>)',
+          secondary: 'hsl(var(--foreground-secondary) / <alpha-value>)',
+          tertiary:  'hsl(var(--foreground-tertiary) / <alpha-value>)',
+          inverted:  'hsl(var(--foreground-inverted) / <alpha-value>)',
+        },
+        // Backward compatibility alias
         foreground: {
           primary:   'hsl(var(--foreground-primary) / <alpha-value>)',
           secondary: 'hsl(var(--foreground-secondary) / <alpha-value>)',
@@ -56,18 +63,32 @@ export default {
           inverted:  'hsl(var(--foreground-inverted) / <alpha-value>)',
         },
 
-        // Borders and Dividers
+        // Borders and Dividers - Custom for backwards compatibility
+        'border-custom': {
+          default: 'hsl(var(--border-default) / <alpha-value>)',
+          dark:    'hsl(var(--border-dark) / <alpha-value>)',
+          light:   'hsl(var(--border-light) / <alpha-value>)',
+        },
+        // Backward compatibility alias
         border: {
           default: 'hsl(var(--border-default) / <alpha-value>)',
           dark:    'hsl(var(--border-dark) / <alpha-value>)',
           light:   'hsl(var(--border-light) / <alpha-value>)',
         },
 
-        // Card Specific
+        // Card Specific (custom - keeping for backwards compatibility)
+        'card-custom': {
+          background: 'hsl(var(--card-background) / <alpha-value>)',
+          border:     'hsl(var(--card-border) / <alpha-value>)',
+        },
+        // Backward compatibility alias
         card: {
           background: 'hsl(var(--card-background) / <alpha-value>)',
           border:     'hsl(var(--card-border) / <alpha-value>)',
         },
+
+        // Standard Design Tokens are defined in CSS variables and work directly with Tailwind v4
+        // No need to define them here as they'll be picked up automatically
       },
       boxShadow: {
         'custom-glow': '0 0 15px rgba(255, 170, 0, 0.6)', // Golden glow

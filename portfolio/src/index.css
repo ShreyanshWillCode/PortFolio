@@ -18,8 +18,6 @@
     --primary-900: 40 100% 20%;  /* Almost black gold */
     --primary-950: 40 100% 10%;  /* Deepest gold */
 
-    --accent: 40 100% 60%; /* Warm golden accent, matching image highlights */
-
     /* Backgrounds: Deep, dark tones to match image */
     --background-darkest: 0 0% 5%;   /* Near black for deepest shadows */
     --background-darker: 0 0% 8%;    /* Slightly lighter for main dark areas */
@@ -43,6 +41,27 @@
     --card-background: 0 0% 12%; /* Slightly lighter than background for cards */
     --card-border: 40 100% 30% / 0.3; /* Subtle golden tint for card borders */
 
+    /* Standard Design Tokens (for shadcn/ui components) - Using HSL format */
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 90%;
+    --foreground: 0 0% 90%;
+    --muted-foreground: 0 0% 70%;
+    --border: 0 0% 20%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 40 100% 60%;
+    --primary-foreground: 0 0% 10%;
+    --muted: 0 0% 15%;
+    --accent: 40 100% 60%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 0 0% 20%;
+    --input-background: 0 0% 12%;
+    --ring: 40 100% 60%;
+    --background: 0 0% 10%;
     --radius: 0.5rem;
   }
 }
