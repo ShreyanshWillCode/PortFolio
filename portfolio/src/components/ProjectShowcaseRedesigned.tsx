@@ -16,6 +16,15 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "eWallet",
+    description: "A secure digital wallet application for managing real money transactions, featuring a sleek modern interface.",
+    image: "/Ewallet.png",
+    technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    repo: "https://github.com/ShreyanshWillCode/User-Wallet-APP",
+    live: "https://ewallet-eight.vercel.app/"
+  },
+  {
+    id: 2,
     title: "Mars Rover Navigation",
     description: "A simulation of the Mars Rover mission with pathfinding algorithms and terrain mapping capabilities.",
     image: "/Mars-Rover.png",
@@ -24,7 +33,7 @@ const projects: Project[] = [
     live: "https://mars-rover-navigationfrontend.vercel.app/"
   },
   {
-    id: 2,
+    id: 3,
     title: "Notification Service",
     description: "A real-time notification service built with WebSocket technology for instant message delivery.",
     image: "/Notification_service.png",
@@ -33,7 +42,7 @@ const projects: Project[] = [
     live: "https://notification-service-theta.vercel.app/"
   },
   {
-    id: 3,
+    id: 4,
     title: "Shaabdkosh Dictionary",
     description: "A modern dictionary application with word definitions, synonyms, and examples.",
     image: "/Dictionary.png",
@@ -42,7 +51,7 @@ const projects: Project[] = [
     live: "https://shaabdkosh.vercel.app/"
   },
   {
-    id: 4,
+    id: 5,
     title: "Spam Email Classifier",
     description: "Machine learning model to classify emails as spam or not spam.",
     image: "/Spam_email.png",
@@ -51,7 +60,7 @@ const projects: Project[] = [
     live: "https://spam-email-classifier-five.vercel.app/"
   },
   {
-    id: 5,
+    id: 6,
     title: "Weather App",
     description: "Real-time weather application with location-based forecasts.",
     image: "/Weather.png",

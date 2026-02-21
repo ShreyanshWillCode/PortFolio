@@ -205,10 +205,10 @@ const Portfolio = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="border-l-4 border-accent py-2 card-style">
-                    <h4 className="font-bold">Bi-Directional BFS</h4>
+                    <h4 className="font-bold">eWallet</h4>
                     <p className="text-foreground-secondary ">
-                      Implementing Bi-Directional BFS for city navigation and
-                      comparing it with BFS and DFS.
+                      A secure digital wallet application for managing real money
+                      transactions with a modern UI.
                     </p>
                   </div>
                   <div className="border-l-4 border-accent py-2 card-style">
