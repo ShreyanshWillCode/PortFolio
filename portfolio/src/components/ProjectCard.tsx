@@ -10,7 +10,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   tags: string[];
-  repo: string;
+  repo?: string;
   live: string;
   index: number;
   isActive: boolean;
@@ -154,23 +154,25 @@ export function ProjectCard({ title, description, image, tags, repo, live, index
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-1 sm:gap-1.5 md:gap-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-              <a 
-                href={repo} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex-1 no-underline hover:no-underline"
-              >
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full h-7 sm:h-8 md:h-9 lg:h-10 text-[8px] sm:text-[10px] md:text-xs lg:text-sm px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 border-slate-300 bg-white hover:bg-slate-50 text-black flex items-center justify-center shadow-sm"
+            <div className={`flex ${repo ? 'gap-1 sm:gap-1.5 md:gap-2' : ''} flex-shrink-0`} onClick={(e) => e.stopPropagation()}>
+              {repo && (
+                <a 
+                  href={repo} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 no-underline hover:no-underline"
                 >
-                  <FaGithub className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 mr-1 sm:mr-1.5" />
-                  <span className="hidden sm:inline">GitHub</span>
-                  <span className="sm:hidden">GH</span>
-                </Button>
-              </a>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full h-7 sm:h-8 md:h-9 lg:h-10 text-[8px] sm:text-[10px] md:text-xs lg:text-sm px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 border-slate-300 bg-white hover:bg-slate-50 text-black flex items-center justify-center shadow-sm"
+                  >
+                    <FaGithub className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 mr-1 sm:mr-1.5" />
+                    <span className="hidden sm:inline">GitHub</span>
+                    <span className="sm:hidden">GH</span>
+                  </Button>
+                </a>
+              )}
               <a 
                 href={live} 
                 target="_blank" 

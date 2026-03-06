@@ -9,7 +9,7 @@ interface Project {
   description: string;
   image: string;
   technologies: string[];
-  repo: string;
+  repo?: string;
   live: string;
 }
 
@@ -67,6 +67,14 @@ const projects: Project[] = [
     technologies: ["React", "Weather API", "Geolocation"],
     repo: "https://github.com/ShreyanshWillCode/Weather_app",
     live: "https://weather-app-blot.vercel.app/"
+  },
+  {
+    id: 7,
+    title: "Zaigro",
+    description: "A freelance digital platform for a local food and grocery delivery service, ensuring seamless online ordering for customers.",
+    image: "/image.jpg",
+    technologies: ["React", "Web Delivery", "Freelance"],
+    live: "https://zaigro.in/"
   }
 ];
 
