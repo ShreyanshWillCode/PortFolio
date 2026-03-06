@@ -72,7 +72,7 @@ const projects: Project[] = [
     id: 7,
     title: "Zaigro",
     description: "A freelance digital platform for a local food and grocery delivery service, ensuring seamless online ordering for customers.",
-    image: "/Zaigro.jpg",
+    image: "/Zaigro.png",
     technologies: ["React", "Web Delivery", "Freelance"],
     live: "https://zaigro.in/"
   }
