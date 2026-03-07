@@ -72,9 +72,18 @@ const projects: Project[] = [
     id: 7,
     title: "Zaigro",
     description: "A freelance digital platform for a local food and grocery delivery service, ensuring seamless online ordering for customers.",
-    image: "/Zaigro.png",
+    image: "/image.jpg",
     technologies: ["React", "Web Delivery", "Freelance"],
     live: "https://zaigro.in/"
+  },
+  {
+    id: 8,
+    title: "House Rental",
+    description: "A modern house rental platform to browse, list, and manage rental properties with a clean and intuitive interface.",
+    image: "/House.png",
+    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    repo: "https://github.com/ShreyanshWillCode/House-Rental-",
+    live: "https://house-rental-blush.vercel.app/"
   }
 ];
 
