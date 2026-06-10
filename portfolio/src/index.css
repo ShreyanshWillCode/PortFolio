@@ -5,63 +5,63 @@
 
 @layer base {
   :root {
-    /* Color Palette for Dark, Golden Theme */
-    --primary-50: 40 100% 98%;   /* Very light gold */
-    --primary-100: 40 100% 95%;  /* Lighter gold */
-    --primary-200: 40 100% 90%;  /* Light gold */
-    --primary-300: 40 100% 80%;  /* Medium gold */
-    --primary-400: 40 100% 70%;  /* Stronger gold */
-    --primary-500: 40 100% 60%;  /* Base gold */
-    --primary-600: 40 100% 50%;  /* Deep gold */
-    --primary-700: 40 100% 40%;  /* Darker gold */
-    --primary-800: 40 100% 30%;  /* Very dark gold */
-    --primary-900: 40 100% 20%;  /* Almost black gold */
-    --primary-950: 40 100% 10%;  /* Deepest gold */
+    /* Color Palette for Dark Theme */
+    --primary-50: 210 100% 98%; 
+    --primary-100: 210 100% 95%;
+    --primary-200: 210 100% 90%;
+    --primary-300: 210 100% 80%;
+    --primary-400: 210 100% 70%;
+    --primary-500: 230 100% 65%;  /* Indigo/Purple base */
+    --primary-600: 230 100% 55%; 
+    --primary-700: 230 100% 45%; 
+    --primary-800: 230 100% 35%; 
+    --primary-900: 230 100% 25%; 
+    --primary-950: 230 100% 15%; 
 
-    /* Backgrounds: Deep, dark tones to match image */
-    --background-darkest: 0 0% 5%;   /* Near black for deepest shadows */
-    --background-darker: 0 0% 8%;    /* Slightly lighter for main dark areas */
-    --background-default: 0 0% 10%;  /* Base background */
-    --background-lighter: 0 0% 15%;  /* For subtle gradient variations */
-    --background-lightest: 0 0% 20%; /* For very subtle elevated areas */
-    --background-hue: 0; /* Base hue for dynamic background gradient */
+    /* Backgrounds: Deep slate/navy tones */
+    --background-darkest: 240 10% 4%;   /* Deepest dark */
+    --background-darker: 240 10% 6%;    /* Slightly lighter */
+    --background-default: 240 10% 8%;   /* Base background */
+    --background-lighter: 240 10% 12%;  /* For subtle gradient variations */
+    --background-lightest: 240 10% 16%; /* Elevated areas */
+    --background-hue: 240; /* Base hue for dynamic background gradient */
 
-    /* Foregrounds (Text Colors): High contrast for readability */
-    --foreground-primary: 0 0% 90%;   /* Light grey for main text */
-    --foreground-secondary: 0 0% 70%; /* Medium grey for secondary text */
-    --foreground-tertiary: 0 0% 50%;  /* Darker grey for tertiary info */
-    --foreground-inverted: 0 0% 10%;  /* Dark text on light backgrounds (if any) */
+    /* Foregrounds (Text Colors) */
+    --foreground-primary: 0 0% 95%;   /* Almost white */
+    --foreground-secondary: 0 0% 75%; /* Soft grey */
+    --foreground-tertiary: 0 0% 55%;  /* Muted grey */
+    --foreground-inverted: 0 0% 10%;  
 
-    /* Borders and Dividers: Subtle presence */
-    --border-default: 0 0% 20%; /* Dark grey border */
-    --border-dark: 0 0% 15%;    /* Even darker border */
-    --border-light: 0 0% 25%;   /* Slightly lighter border */
+    /* Borders and Dividers */
+    --border-default: 240 10% 15%; 
+    --border-dark: 240 10% 12%;    
+    --border-light: 240 10% 20%;   
 
-    /* Card Specific: Defined with transparency */
-    --card-background: 0 0% 12%; /* Slightly lighter than background for cards */
-    --card-border: 40 100% 30% / 0.3; /* Subtle golden tint for card borders */
+    /* Card Specific */
+    --card-background: 240 10% 8%; 
+    --card-border: 240 10% 18% / 0.5; /* Subtle border */
 
-    /* Standard Design Tokens (for shadcn/ui components) - Using HSL format */
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 90%;
-    --foreground: 0 0% 90%;
+    /* Standard Design Tokens (for shadcn/ui components) */
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+    --foreground: 0 0% 95%;
     --muted-foreground: 0 0% 70%;
-    --border: 0 0% 20%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 90%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 90%;
-    --primary: 40 100% 60%;
-    --primary-foreground: 0 0% 10%;
-    --muted: 0 0% 15%;
-    --accent: 40 100% 60%;
-    --accent-foreground: 0 0% 90%;
+    --border: 240 10% 15%;
+    --secondary: 240 10% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 230 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 240 10% 12%;
+    --accent: 190 100% 50%; /* Cyan accent */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --input: 0 0% 20%;
-    --input-background: 0 0% 12%;
-    --ring: 40 100% 60%;
-    --background: 0 0% 10%;
+    --input: 240 10% 15%;
+    --input-background: 240 10% 8%;
+    --ring: 230 100% 65%;
+    --background: 240 10% 8%;
     --radius: 0.5rem;
   }
 }
@@ -70,30 +70,45 @@
   * {
     @apply border-[hsl(var(--border-default))];
   }
-  body {
-    background: linear-gradient(to bottom, hsl(var(--background-hue), 0%, 5%), hsl(var(--background-hue), 0%, 8%));
-    background-attachment: fixed;
-    color: hsl(var(--foreground-primary));
-    font-feature-settings: "rlig" 1, "calt" 1;
-    position: relative;
-  }
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISGaCBYRAAAAGnRSTlP//////////////////////////dA3jaAAAADlSURBVDjL7ZXRCQAwCMN5R4/+/83Lg0gB+R8f+L5y45M0d+w7F7D0g18g8o8G7X8A6c0d/gPgnrY9s0jAAAAAElFTkSuQmCC'); /* Subtle noise */
-    opacity: 0.03; /* Reduced opacity for a very subtle grain */
-    pointer-events: none;
-    z-index: -1;
-  }
+}
 
-  /* Specific styles for sections that should be darker */
-  #home, #about, #skills, #projects, #social-medias {
-    background-color: transparent;
-  }
+body {
+  background-color: #0a0a0f; /* Refined dark complexion */
+  color: var(--foreground-primary);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient glow blobs */
+body::before {
+  content: '';
+  position: fixed;
+  top: -120px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -60px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,166,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Specific styles for sections that should be darker */
+#home, #about, #skills, #projects, #social-medias {
+  background-color: transparent;
 }
 
 /* Custom scrollbar */
@@ -141,26 +156,15 @@ a.text-primary-600, .text-primary-400 {
 
 /* Styles for buttons/cards based on semi-transparent dark fill */
 .card-style {
-  background-color: hsla(var(--card-background), 0.9);
+  background-color: hsla(var(--card-background), 0.7);
   border: 1px solid hsla(var(--card-border));
-  box-shadow: 0 0 10px hsla(var(--accent), 0.2); /* Subtle golden glow */
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 1rem; /* rounded-2xl roughly */
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .card-style:hover {
-  background-color: hsla(var(--card-background), 0.95);
-  box-shadow: 0 0 18px hsla(var(--accent), 0.4); /* Enhanced golden glow on hover */
+  background-color: hsla(var(--card-background), 0.9);
+  border-color: hsla(var(--border-light));
 }
 
-/* Soft vignette or edge darkening to focus attention on content */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0px 0px 150px rgba(0, 0, 0, 0.9); /* Stronger vignette */
-  pointer-events: none;
-  z-index: 9999;
-}
+

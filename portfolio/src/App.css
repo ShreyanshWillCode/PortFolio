@@ -7,20 +7,19 @@
 }
 section {
   scroll-margin-top: 40px;
-  scroll-margin-bottom: 30px; /* Adjust according to navbar height */
+  scroll-margin-bottom: 30px;
 }
-section {
-  padding-top: 80px; /* Adjust as needed */
-}
+/* Section padding is handled by each component individually via clamp() */
 
 
-.App{
-  --primary-color: rgba(52, 152, 219, 0.3); /* Light translucent primary */
-    --secondary-color: rgba(41, 128, 185, 0.3); /* Light translucent secondary */
-    --text-color: #1d1d1d;
-    --light-text: #1e1e1e;
-    --bg-color: #93a4b6;
-    
+.App {
+  --primary-color: rgba(52, 152, 219, 0.3);
+  --secondary-color: rgba(41, 128, 185, 0.3);
+  --text-color: #1d1d1d;
+  --light-text: #1e1e1e;
+  --bg-color: #93a4b6;
+  overflow-x: hidden; /* Prevent any child from causing horizontal scroll */
+  width: 100%;
 }
 
 .Resume{
@@ -78,13 +77,11 @@ section {
   color: #888;
 } */
 
-/* About Section Styles */
+/* About section padding is handled internally via clamp() in the component */
 #about {
   position: relative;
   z-index: 1;
   background-color: transparent !important;
-  padding-top: 80px;
-  padding-bottom: 80px;
 }
 
 #about h2, #about h3, #about h4 {
