@@ -7,6 +7,23 @@ import { ProjectCard } from './ProjectCard';
 const PROJECTS = [
   {
     id: 1,
+    title: 'House Rental',
+    description: 'A modern house rental platform to browse, list, and manage rental properties.',
+    image: '/House.png',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    repo: 'https://github.com/ShreyanshWillCode/House-Rental-',
+    live: 'https://house-rental-blush.vercel.app/',
+  },
+  {
+    id: 2,
+    title: 'Zaigro',
+    description: 'A freelance digital platform for a local food and grocery delivery service.',
+    image: '/Zaigro.png',
+    technologies: ['React', 'Web Delivery', 'Freelance'],
+    live: 'https://zaigro.in/',
+  },
+  {
+    id: 3,
     title: 'eWallet',
     description: 'A secure digital wallet application for managing real money transactions, featuring a sleek modern interface.',
     image: '/Ewallet.png',
@@ -15,7 +32,7 @@ const PROJECTS = [
     live: 'https://ewallet-eight.vercel.app/',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Mars Rover Navigation',
     description: 'A simulation of the Mars Rover mission with pathfinding algorithms and terrain mapping capabilities.',
     image: '/Mars-Rover.png',
@@ -24,7 +41,7 @@ const PROJECTS = [
     live: 'https://mars-rover-navigationfrontend.vercel.app/',
   },
   {
-    id: 3,
+    id: 5,
     title: 'Notification Service',
     description: 'A real-time notification service built with WebSocket technology for instant message delivery.',
     image: '/Notification_service.png',
@@ -33,7 +50,7 @@ const PROJECTS = [
     live: 'https://notification-service-theta.vercel.app/',
   },
   {
-    id: 4,
+    id: 6,
     title: 'Shaabdkosh Dictionary',
     description: 'A modern dictionary application with word definitions, synonyms, and examples.',
     image: '/Dictionary.png',
@@ -42,7 +59,7 @@ const PROJECTS = [
     live: 'https://shaabdkosh.vercel.app/',
   },
   {
-    id: 5,
+    id: 7,
     title: 'Spam Email Classifier',
     description: 'Machine learning model to classify emails as spam or not spam.',
     image: '/Spam_email.png',
@@ -51,30 +68,13 @@ const PROJECTS = [
     live: 'https://spam-email-classifier-five.vercel.app/',
   },
   {
-    id: 6,
+    id: 8,
     title: 'Weather App',
     description: 'Real-time weather application with location-based forecasts.',
     image: '/Weather.png',
     technologies: ['React', 'Weather API', 'Geolocation'],
     repo: 'https://github.com/ShreyanshWillCode/Weather_app',
     live: 'https://weather-app-blot.vercel.app/',
-  },
-  {
-    id: 7,
-    title: 'Zaigro',
-    description: 'A freelance digital platform for a local food and grocery delivery service.',
-    image: '/Zaigro.png',
-    technologies: ['React', 'Web Delivery', 'Freelance'],
-    live: 'https://zaigro.in/',
-  },
-  {
-    id: 8,
-    title: 'House Rental',
-    description: 'A modern house rental platform to browse, list, and manage rental properties.',
-    image: '/House.png',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-    repo: 'https://github.com/ShreyanshWillCode/House-Rental-',
-    live: 'https://house-rental-blush.vercel.app/',
   },
 ] as const;
 
