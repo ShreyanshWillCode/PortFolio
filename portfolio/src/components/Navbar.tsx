@@ -45,11 +45,20 @@ const Navbar: React.FC = () => {
       setScrolled(currentScrollY > 40);
 
       // Determine which section is visible
-      for (const id of [...SECTION_IDS].reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(id);
-          break;
+      const isAtBottom = window.innerHeight + currentScrollY >= document.body.offsetHeight - 10;
+      
+      if (isAtBottom) {
+        setActiveSection(SECTION_IDS[SECTION_IDS.length - 1]);
+      } else {
+        for (const id of [...SECTION_IDS].reverse()) {
+          const el = document.getElementById(id);
+          if (el) {
+            const absoluteTop = el.getBoundingClientRect().top + window.scrollY;
+            if (currentScrollY >= absoluteTop - 120) {
+              setActiveSection(id);
+              break;
+            }
+          }
         }
       }
     };
