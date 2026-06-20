@@ -1,12 +1,12 @@
 import React, { useState, useCallback, useRef, useMemo } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ProjectCard } from './ProjectCard';
 
 /* ─── Static data — defined ONCE outside the component ───────── */
 const PROJECTS = [
   {
-    id: 1,
+    id: 0,
     title: 'House Rental',
     description: 'A modern house rental platform to browse, list, and manage rental properties.',
     image: '/House.png',
@@ -14,6 +14,16 @@ const PROJECTS = [
     repo: 'https://github.com/ShreyanshWillCode/House-Rental-',
     live: 'https://house-rental-blush.vercel.app/',
   },
+  {
+    id: 1,
+    title: 'Mini-Search Engine',
+    description: 'A lightweight search engine that crawls, indexes, and ranks pages using TF-IDF and BFS — built from scratch with no external search libraries.',
+    image: '/gravity%20search.png',
+    technologies: ['Python', 'TF-IDF', 'BFS', 'Web Crawling', 'Algorithms'],
+    repo: 'https://github.com/ShreyanshWillCode/Mini-Search-Engine',
+    live: 'https://mini-search-engine-eight.vercel.app/',
+  },
+ 
   {
     id: 2,
     title: 'Zaigro',
@@ -138,6 +148,32 @@ export default function ProjectShowcaseRedesigned() {
     )),
   [activeIndex, goTo]);
 
+  // Header reveal animation
+  const headerRef = useRef<HTMLDivElement>(null);
+  const isHeaderInView = useInView(headerRef, { once: true, margin: '-80px' });
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12 } },
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 28 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+  const reducedVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.4 } },
+  };
+
+  const childV = prefersReducedMotion ? reducedVariants : itemVariants;
+  const parentV = prefersReducedMotion
+    ? { hidden: {}, visible: { transition: { staggerChildren: 0 } } }
+    : containerVariants;
+
   return (
     <div
       className="w-full min-h-[80vh] relative flex flex-col items-center justify-center bg-transparent"
@@ -145,24 +181,104 @@ export default function ProjectShowcaseRedesigned() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 md:py-16 lg:py-20 w-full">
 
-        {/* Header */}
-        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white mb-3 sm:mb-4 lg:mb-6">
-            Featured Projects
-          </h2>
-          <div className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
-            <p className="text-slate-300 leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg">
-              Explore some of my recent work and personal projects. Each project represents a unique
-              challenge and solution, showcasing different technologies and design approaches.
-            </p>
-            <p className="text-slate-400 text-xs sm:text-sm mt-2 lg:hidden">
-              💡 Swipe left or right to navigate through projects
-            </p>
-            <p className="text-slate-400 text-sm lg:text-base mt-2 hidden lg:block">
-              💡 Hover to spread cards or use navigation controls
-            </p>
-          </div>
-        </div>
+        {/* ── Section Header — left-aligned, typographically bold ── */}
+        <motion.div
+          ref={headerRef}
+          className="mb-10 sm:mb-14 md:mb-18 lg:mb-20"
+          variants={parentV}
+          initial="hidden"
+          animate={isHeaderInView ? 'visible' : 'hidden'}
+        >
+          {/* Structural rule + descriptor — NOT a kicker eyebrow */}
+          <motion.div
+            className="flex items-center gap-3 mb-5 sm:mb-6"
+            variants={childV}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                display: 'block',
+                width: 'clamp(28px, 3vw, 40px)',
+                height: '2px',
+                background: '#38bdf8',
+                borderRadius: '2px',
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "'Outfit', 'Geist', sans-serif",
+                fontSize: 'clamp(10px, 1.1vw, 13px)',
+                letterSpacing: '0.12em',
+                color: '#38bdf8',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+              }}
+            >
+              Selected Work
+            </span>
+          </motion.div>
+
+          {/* Primary heading */}
+          <motion.h2
+            variants={childV}
+            style={{
+              fontFamily: "'Outfit', 'Geist', sans-serif",
+              fontSize: 'clamp(32px, 6vw, 72px)',
+              fontWeight: 800,
+              letterSpacing: '-0.03em',
+              lineHeight: 1.05,
+              color: '#f1f5f9',
+              marginBottom: 'clamp(14px, 2vw, 22px)',
+              textWrap: 'balance',
+            }}
+          >
+            Projects that{' '}
+            <span style={{ color: '#38bdf8' }}>ship.</span>
+          </motion.h2>
+
+          {/* Body descriptor */}
+          <motion.p
+            variants={childV}
+            style={{
+              fontFamily: "'Outfit', 'Geist', sans-serif",
+              fontSize: 'clamp(13px, 1.5vw, 17px)',
+              color: '#94a3b8',
+              lineHeight: 1.7,
+              maxWidth: '58ch',
+              textWrap: 'pretty',
+            }}
+          >
+            Full-stack builds, real-time systems, and client work — each one
+            shipped and running in production for actual users.
+          </motion.p>
+
+          {/* Navigation hint — text only, no emoji */}
+          <motion.p
+            variants={childV}
+            className="lg:hidden"
+            style={{
+              fontFamily: "'Outfit', 'Geist', sans-serif",
+              fontSize: 'clamp(11px, 1.2vw, 13px)',
+              color: '#475569',
+              marginTop: '10px',
+            }}
+          >
+            Swipe to browse &rarr;
+          </motion.p>
+          <motion.p
+            variants={childV}
+            className="hidden lg:block"
+            style={{
+              fontFamily: "'Outfit', 'Geist', sans-serif",
+              fontSize: 'clamp(11px, 1.2vw, 13px)',
+              color: '#475569',
+              marginTop: '10px',
+            }}
+          >
+            Hover to fan cards &middot; use arrows to navigate
+          </motion.p>
+        </motion.div>
 
         {/* Cards Deck + Navigation */}
         <div className="flex flex-col items-center w-full">

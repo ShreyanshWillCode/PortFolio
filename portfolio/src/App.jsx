@@ -25,8 +25,7 @@ const Portfolio = () => {
   const servicesRef = useScrollAnimation();
   const projectsRef = useScrollAnimation();
   const contactRef = useScrollAnimation();
-  // New: heading refs for underline animation
-  const projectsHeadingRef = useScrollAnimation('active');
+  // heading ref for underline animation
   const contactHeadingRef = useScrollAnimation('active');
   // const [isClicked, setIsClicked] = useState(false);
   // const { darkMode } = useContext(ThemeContext);
@@ -96,24 +95,6 @@ const Portfolio = () => {
           className="opacity-0 translate-y-10 transition-all duration-1000 ease-in-out"
           style={{ overflowX: 'visible', overflowY: 'visible', position: 'relative' }}
         >
-          <div
-            className="mx-auto"
-            style={{
-              maxWidth: '1400px',
-              paddingLeft: 'clamp(16px, 4vw, 48px)',
-              paddingRight: 'clamp(16px, 4vw, 48px)',
-            }}
-          >
-            <div className="text-center mb-8 sm:mb-12">
-              <h2
-                ref={projectsHeadingRef}
-                className="font-bold mb-4 heading-underline-rtl tracking-wide text-indigo-300 inline-block"
-                style={{ fontSize: 'clamp(22px, 3.5vw, 36px)' }}
-              >
-                Projects
-              </h2>
-            </div>
-          </div>
           <ProjectShowcaseRedesigned />
         </section>
 
