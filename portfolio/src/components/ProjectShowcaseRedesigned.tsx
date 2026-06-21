@@ -86,6 +86,15 @@ const PROJECTS = [
     repo: 'https://github.com/ShreyanshWillCode/Weather_app',
     live: 'https://weather-app-blot.vercel.app/',
   },
+  {
+    id: 9,
+    title: 'Dental Clinic Demo',
+    description: 'A modern, responsive dental clinic website demo showcasing services, appointments, and clinic information.',
+    image: '/dental.png',
+    imageClassName: 'w-full h-full object-contain p-4',
+    technologies: ['React', 'Web Development', 'Responsive Design'],
+    live: 'https://dental-clinic-sample-swart.vercel.app/',
+  },
 ] as const;
 
 const TOTAL = PROJECTS.length;
@@ -310,6 +319,7 @@ export default function ProjectShowcaseRedesigned() {
                   title={project.title}
                   description={project.description}
                   image={project.image}
+                  imageClassName={'imageClassName' in project ? project.imageClassName : undefined}
                   tags={project.technologies as unknown as string[]}
                   repo={'repo' in project ? project.repo : undefined}
                   live={project.live}

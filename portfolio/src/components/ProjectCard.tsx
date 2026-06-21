@@ -9,6 +9,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  imageClassName?: string;
   tags: string[];
   repo?: string;
   live: string;
@@ -82,7 +83,7 @@ const CARD_ORIGIN: React.CSSProperties = {
 const maxTagsForWidth = (w: number) => (w >= 1024 ? 4 : w >= 768 ? 3 : 2);
 
 export const ProjectCard = memo(function ProjectCard({
-  title, description, image, tags, repo, live,
+  title, description, image, imageClassName, tags, repo, live,
   index, isActive, isSpread, totalCards, onClick, isFirst,
 }: ProjectCardProps) {
   const prefersReduced = useReducedMotion();
@@ -146,11 +147,11 @@ export const ProjectCard = memo(function ProjectCard({
           }}
         >
           {/* Image */}
-          <div className="relative overflow-hidden bg-slate-100" style={{ height: '58%' }}>
+          <div className="relative overflow-hidden bg-slate-100 flex items-center justify-center" style={{ height: '58%' }}>
             <ImageWithFallback
               src={image}
               alt={title}
-              className="w-full h-full object-cover"
+              className={imageClassName || "w-full h-full object-cover"}
               style={{ willChange: 'transform', transition: 'transform 0.3s ease' }}
               loading={isFirst ? 'eager' : 'lazy'}
             />
